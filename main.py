@@ -18,14 +18,19 @@ while not game_playing:
     print('Please enter a letter')
     user_input = input('Guess: ')
     if tries == 1:
+        print('Game Over!')
+        print('You were not able to find the word', random_words)
         break
-
-    if user_input == random_words:
-        print('Congrats you guess the ', random_words)
-        break
+    
+    if (user_input in random_words):
+        print('You guessed the right letter')
     else:
-        print('You guessed the wrong letter.')
         tries = tries - 1
+        print('You guessed the wrong letter.')
         print('Tries left: ', tries)
+    
+    if user_input == random_words:
+        print('Congrats, you guessed the correct word')
+        break
 
     
